@@ -1,0 +1,112 @@
+@font-face {
+    font-family: 'Niconne';
+    src: url('Fonts/Niconne.ttf');
+}
+
+
+.body{
+	background-image: url('Assets/fundo.jpg');
+	background-size: cover;
+	margin: 0px;
+}
+
+.logo {
+    width: 150px; 
+}
+.barra_logo {
+    text-align: center; 
+}
+
+.barra_logo img {
+    max-width: 100%; 
+    height: auto;   
+}
+
+.menu_container {
+	padding-top: 30px;
+    display: flex;
+    justify-content: center; 
+}
+
+.menu {
+    background-color: white; 
+    display: flex;
+	height: 45px;
+    justify-content: center; 
+	width: 643px;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;   
+	justify-content: space-evenly;
+	align-items: center;
+	width: 100%;  
+	height: 100%;
+}
+
+.menu a {
+    display: block;
+	font-size: 24px;
+	font-family: Niconne;
+    color: black;       
+    text-align: justify;    
+    text-decoration: none; 
+	height: 45px;
+	line-height: 45px; 
+	padding: 0 25px;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu .ativo a {
+	background-color: #2d1414; 
+	color: white; 
+}
+
+.menu a:hover {
+    background-color: #2d1414; 
+    color: white;           
+
+}
+
+.inicio{
+	padding-top: 120px;
+    display: flex;
+    justify-content: center; 
+}
+
+.tradicao{
+	font-size: 60px;
+	font-family: Niconne;
+	font-weight: 500;
+	color: white;
+}
+
+.pedido{
+	padding-top: 100px;
+    display: flex;
+    justify-content: center; 
+}
+
+.botao {
+	display: inline-block;
+	width: 250px;          
+	padding: 15px 26px;       
+	background-color: rgb(243, 165, 20);    
+	color: white;           
+	text-align: center;        
+	border: none;             
+	border-radius: 30px;        
+	font-size: 20px;             
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	cursor: pointer;             
+	text-decoration: none;       
+	transition: background-color 0.3s ease;
+}
+
+.botao:hover {
+	background-color: #ff613d; 
+}
