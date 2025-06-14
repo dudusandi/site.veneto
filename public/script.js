@@ -26,6 +26,32 @@ document.addEventListener('DOMContentLoaded', () => {
         mainContent.style.opacity = 0;
     });
 
+    const loadCardapioFromDB = async () => {
+        const { db } = await import('./firebase-init.js');
+        const { ref, onValue } = await import('https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js');
+        const container = document.getElementById('cardapio-container');
+        if (!container) return;
+        const cardapioRef = ref(db, 'cardapio');
+        onValue(cardapioRef, (snapshot) => {
+            container.innerHTML = '';
+            snapshot.forEach((child) => {
+                const item = child.val();
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'cardapio-item';
+                itemDiv.innerHTML = `
+                    <img src="${item.imagem}" alt="${item.nome}">
+                    <div class="cardapio-text">
+                        <h3>${item.nome}</h3>
+                        <p>${item.descricao}</p>
+                    </div>
+                    <div class="cardapio-price">
+                        <p>R$ ${item.preco}</p>
+                    </div>`;
+                container.appendChild(itemDiv);
+            });
+        });
+    };
+
     const loadPage = async (page) => {
         await fadeOut();
 
@@ -34,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const response = await fetch(`/pages/${page}.html`);
+            const response = await fetch(`pages/${page}.html`);
             if (!response.ok) {
                 console.error(`Page not found: /pages/${page}.html. Loading default page.`);
                 history.replaceState({ page: defaultPage }, '', `/${defaultPage}`);
@@ -44,6 +70,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const content = await response.text();
             mainContent.innerHTML = content;
             updateActiveLink(page);
+            if (page === 'cardapio') loadCardapioFromDB();
+            if (page === 'admin') import('./admin.js');
             // Inicia fade-in na próxima pintura
             requestAnimationFrame(() => {
                 mainContent.style.opacity = 1;

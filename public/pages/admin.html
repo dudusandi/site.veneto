@@ -1,0 +1,33 @@
+<div id="login-container" class="admin-section login">
+    <h2>Login Administrativo</h2>
+    <input id="email" type="email" placeholder="Email" class="admin-input">
+    <input id="password" type="password" placeholder="Senha" class="admin-input">
+    <button id="login-btn" class="botao admin-btn" style="width:100%;">Entrar</button>
+    <p id="login-error" class="admin-error"></p>
+</div>
+
+<div id="admin-container" class="admin-section" style="display:none;">
+    <h2>Painel de Cardápio</h2>
+    <button id="logout-btn" class="botao admin-btn" style="margin-bottom:20px;float:right;">Sair</button>
+    <table id="cardapio-table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Preço (R$)</th>
+                <th>Imagem (URL)</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <h3>Novo Item</h3>
+    <input id="new-nome" placeholder="Nome" class="admin-input">
+    <textarea id="new-desc" placeholder="Descrição" class="admin-textarea"></textarea>
+    <input id="new-preco" placeholder="Preço" type="number" class="admin-input">
+    <input id="new-img" placeholder="URL da imagem" class="admin-input">
+    <button id="add-item-btn" class="botao admin-btn" style="margin-top:10px;">Adicionar</button>
+</div>
+
+<script type="module" src="../admin.js"></script> 
