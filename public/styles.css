@@ -8,7 +8,7 @@ html {
 }
 
 :root {
-    --cor-fundo: rgba(72, 38, 38, 0.435);
+    --cor-fundo: rgba(127, 98, 73, 0.318);
 }
 
 .body{
@@ -245,99 +245,14 @@ html {
     font-weight: bold;
 }
 
-/* --- Contato Styles --- */
-
-.contato-container {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 30px;
-    background-color: rgba(72, 38, 38, 0.435);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.contato-wrapper {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-}
-
-.contato-info, .contato-form {
-    width: 48%;
-}
-
-.contato-info h4, .contato-form h4 {
-    font-family: 'Niconne', sans-serif;
-    font-size: 36px;
-    color: #ffffff;
-    margin-top: 0;
-    margin-bottom: 20px;
-}
-
-.info-block {
-    margin-bottom: 25px;
-}
-
-.info-block p {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #ffffff;
-    font-size: 16px;
-    line-height: 1.6;
-    margin: 0;
-}
-
-.contato-form label {
-    display: block;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #ffffff;
-    margin-bottom: 5px;
-    font-size: 14px;
-}
-
-.contato-form input,
-.contato-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    box-sizing: border-box; /* Ensures padding doesn't affect width */
-}
-
-.contato-form textarea {
-    resize: vertical;
-}
-
-.botao-form {
-    width: 100%;
-    padding: 12px;
-    background-color: rgb(243, 165, 20);
-    color: white;
-    border: none;
-    border-radius: 30px;
-    font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.botao-form:hover {
-    background-color: #ff613d;
-}
 
 /* --- Tele-Entrega Styles --- */
 
 .tele-container {
     max-width: 800px;
-    margin: 60px auto;
+    margin: 30px auto;
     padding: 40px;
-    background-color: var(--cor-fundo);
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     text-align: center;
 }
 
@@ -350,11 +265,11 @@ html {
 }
 
 .tele-container p {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
+    font-family: 'Niconne', sans-serif;
+    font-size: 30px;
     color: #fefefe;
     line-height: 1.6;
-    margin-bottom: 30px;
+
 }
 
 .tele-actions .botao {
@@ -368,7 +283,7 @@ html {
 }
 
 .tele-numeros p {
-    font-size: 16px;
+    font-size: 30px;
     margin-bottom: 20px;
     color: #ffffff;
 }
@@ -380,7 +295,6 @@ html {
     padding: 10px;
     border-radius: 10px;
     display: inline-block;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 28px;
     font-weight: bold;
     color: #ffffff;
@@ -391,6 +305,48 @@ html {
 #main-content {
     transition: opacity 0.4s ease;
 }
+
+/* --- Contato Styles --- */
+
+.contato-container {
+    max-width: 700px;
+    margin: 10px auto;
+    border-radius: 8px;
+}
+
+.contato-wrapper {
+    font-family: 'Niconne', sans-serif;
+    font-size: 36px;
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    justify-content: center;
+    align-items: start;
+}
+
+
+.info-block {
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.info-block p {
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.info-block h4 {
+    font-family: 'Niconne', sans-serif;
+    font-size: 36px;
+    color: #ffbb6e;
+}
+
+
 
 /* ======= Mobile (<= 768px) ======= */
 @media (max-width: 768px) {
@@ -466,6 +422,16 @@ html {
     .tele-numeros span {
         display: block;
         margin: 10px auto;
+    }
+
+    .info-block {
+        gap: 5px;
+        padding: 8px 5px;
+    }
+
+    .contato-wrapper {
+        grid-template-columns: 1fr;
+        gap: 5px;
     }
 }
 
