@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Niconne&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeteria Vêneto</title>
+</head>
+<body class="body" >
+    <div class="barra_logo">
+        <img src="Assets/logo.webp" alt="Logo" class="logo">
+    </div>
+
+    <div class="menu_container">
+        <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+        <div class="menu">
+            <ul>
+                <li class="ativo"><a href="inicio">Início</a></li>
+                <li><a href="cardapio">Cardápio</a></li>
+                <li><a href="tele">Tele Entrega</a></li>
+                <li><a href="sobre">Sobre Nós</a></li>
+                <li><a href="contato">Contato</a></li>
+            </ul>
+        </div>
+    </div>
+    <main id="main-content">
+        <!-- O conteúdo será carregado aqui dinamicamente -->
+    </main>
+    <script type="module" src="firebase-init.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
