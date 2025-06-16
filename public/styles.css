@@ -1,4 +1,3 @@
-
 html {
     height: 100%;
 }
@@ -117,12 +116,13 @@ html {
 	background-color: #ff613d; 
 }
 
-/* --- Cardápio Styles --- */
+/* --- Cardápio --- */
 
 .cardapio-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 40px;
     gap: 30px;
     padding: 40px 20px;
 }
@@ -183,13 +183,12 @@ html {
     margin: 0;
 }
 
-/* --- Sobre Nós Styles --- */
+/* --- Sobre Nós --- */
 
 .sobre-container {
     max-width: 900px;
     margin: 40px auto;
     padding: 30px;
-    background-color: var(--cor-fundo);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
@@ -218,10 +217,15 @@ html {
     padding-top: 30px;
 }
 
+.testimonials h3{
+    margin-bottom: 20px;
+}
+
 .testimonial-item {
     margin-bottom: 20px;
     text-align: center;
-}
+}   
+
 
 .testimonial-item blockquote {
     font-family: 'Georgia', serif;
@@ -237,16 +241,16 @@ html {
     margin-top: 10px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
-    color: #ffffff;
+    color: #5a2525;
     font-weight: bold;
 }
 
 
-/* --- Tele-Entrega Styles --- */
+/* --- Tele-Entrega --- */
 
 .tele-container {
-    max-width: 800px;
-    margin: 30px auto;
+    max-width: auto;
+    margin: 0px auto;
     padding: 40px;
     border-radius: 8px;
     text-align: center;
@@ -269,7 +273,7 @@ html {
 }
 
 .tele-actions .botao {
-    margin: 0 auto; /* Center the button */
+    margin: 0 auto;
 }
 
 .tele-numeros {
@@ -306,11 +310,12 @@ html {
     transition: opacity 0.4s ease;
 }
 
-/* --- Contato Styles --- */
+
+/* --- Contato --- */
 
 .contato-container {
     max-width: 700px;
-    margin: 10px auto;
+    margin: 70px auto 100px auto;
     border-radius: 8px;
 }
 
@@ -327,27 +332,27 @@ html {
 
 
 .info-block {
-    padding: 25px;
+    padding: 5px;
     border-radius: 8px;
     text-align: center;
+    margin: 0;
 }
 
 .info-block p {
     font-family: 'Times New Roman', Times, serif;
     color: #ffffff;
-    font-size: 20px;
-    line-height: 1.6;
+    font-size: 18px;
+    line-height: 1.4;
     margin: 0;
+    padding: 0;
 }
 
 .info-block h4 {
     font-family: 'Niconne', sans-serif;
-    font-size: 36px;
+    font-size: 32px;
     color: #ffbb6e;
+    margin: 5px 0;
 }
-
-.info-block a {
-margin-bottom: 50px;}
 
 
 
@@ -356,42 +361,39 @@ margin-bottom: 50px;}
     .menu-toggle {
         display: block;
         position: absolute;
+        width: 100%;
         top: 10px;
         left: 50%;
         transform: translateX(-50%);
-        background-color: rgba(243, 243, 243, 0.627);
+        background-color: #1f0808d0;
         border: none;
-        border-radius: 25px;
         padding: 8px 20px;
         font-size: 18px;
-        color: #260b0b;
+        color: #ffffff;
         cursor: pointer;
         z-index: 200;
         box-shadow: 0 2px 6px rgba(0,0,0,0.2);
         transition: background 0.3s ease;
     }
 
-    .menu-toggle:hover {
-        background-color: #ff613d;
-    }
 
     .menu {
         width: 100%;
         flex-direction: column;
         position: absolute;
-        top: 60px; /* abaixo da barra/logo */
+        top: 60px; 
         left: 0;
         background-color: white;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         transform-origin: top;
         transition: max-height 0.3s ease;
-        max-height: 0; /* recolhido */
-        height: auto; /* garante que possa expandir */
+        max-height: 0; 
+        height: auto; 
         overflow: hidden;
     }
 
     .menu.open {
-        max-height: 500px; /* valor grande suficiente para exibir todos os itens */
+        max-height: 500px; 
     }
 
     .menu ul {
@@ -412,7 +414,6 @@ margin-bottom: 50px;}
         position: relative;
     }
 
-    /* Ajustes de títulos/imagens para telas pequenas */
     .tradicao {
         font-size: 40px;
         text-align: center;
@@ -427,23 +428,52 @@ margin-bottom: 50px;}
         margin: 10px auto;
     }
 
+    .tele-container{
+        max-width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
     .info-block {
-        gap: 5px;
-        padding: 8px 5px;
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center;
+        margin: 0;
+    }
+
+    .info-block p{
+        margin: 0px;
+    }
+
+
+    .info-block p{
+        font-size: 16px;
+    }
+
+    .info-block:last-child {
+        margin-bottom: 100px;
+    }
+
+    .contato-container {
+        max-width: 700px;
+        border-radius: 8px;
+        margin-top: 40px;
     }
 
     .contato-wrapper {
         grid-template-columns: 1fr;
-        gap: 5px;
+        margin: 0;
     }
 }
 
-/* ======= Botão escondido em telas largas (desktop) ======= */
 @media (min-width: 769px) {
     .menu-toggle {
         display: none;
     }
 }
+
 
 /* ==== Admin Page Styles ==== */
 .admin-section{
