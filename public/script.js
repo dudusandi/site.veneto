@@ -72,6 +72,16 @@ document.addEventListener('DOMContentLoaded', () => {
             updateActiveLink(page);
             if (page === 'cardapio') loadCardapioFromDB();
             if (page === 'admin') import('./admin.js');
+            
+            // Envia evento de visualização de página para o Google Analytics
+            if (typeof gtag === 'function') {
+                gtag('event', 'page_view', {
+                    page_title: page.charAt(0).toUpperCase() + page.slice(1),
+                    page_location: window.location.href,
+                    page_path: `/${page}`
+                });
+            }
+
             // Inicia fade-in na próxima pintura
             requestAnimationFrame(() => {
                 mainContent.style.opacity = 1;
