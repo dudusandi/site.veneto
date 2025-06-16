@@ -288,6 +288,10 @@ html {
     color: #ffffff;
 }
 
+.tele-numeros a {
+    margin-bottom: 20px;
+}
+
 .tele-numeros span {
     display: block;
     margin: 10px auto;
@@ -345,6 +349,9 @@ html {
     font-size: 36px;
     color: #ffbb6e;
 }
+
+.info-block a {
+margin-bottom: 50px;}
 
 
 
