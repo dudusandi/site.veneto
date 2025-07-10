@@ -68,24 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const content = await response.text();
             mainContent.innerHTML = content;
             updateActiveLink(page);
-            if (page === 'cardapio') loadCardapioFromDB();
-            if (page === 'admin') import('./admin.js');
-            
-            // Envia evento de visualização de página para o Google Analytics
-            if (typeof gtag === 'function') {
-                gtag('event', 'page_view', {
-                    page_title: page.charAt(0).toUpperCase() + page.slice(1),
-                    page_location: window.location.href,
-                    page_path: `/${page}`
-                });
-            }
-
-            // Inicia fade-in na próxima pintura
+            if (page === 'cardapio') loadCardapioFromDB();            
             requestAnimationFrame(() => {
                 mainContent.style.opacity = 1;
             });
         } catch (error) {
-            console.error('Error loading page:', error);
             mainContent.innerHTML = '<p>Erro ao carregar o conteúdo. Por favor, tente novamente.</p>';
             requestAnimationFrame(() => {
                 mainContent.style.opacity = 1;
@@ -107,7 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 history.pushState({ page }, '', `/${page}`);
                 loadPage(page);
             }
-            // Fecha menu mobile após clique
             if (menuElement.classList.contains('open')) {
                 menuElement.classList.remove('open');
             }
