@@ -20,9 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
             resolve();
         };
         mainContent.addEventListener('transitionend', handle);
-        // Garante que o evento será disparado mesmo se o navegador não suportar transitionend
         setTimeout(resolve, 450); // 400ms + margem
-        // Inicia fade-out
         mainContent.style.opacity = 0;
     });
 
